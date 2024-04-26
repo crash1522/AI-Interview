@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: interver
+  labels:
+    app: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+        - name: app
+          image: 900478210705.dkr.ecr.ap-northeast-2.amazonaws.com/interver:7f47ab0cf90215dc5e8237272429b03541e38953
+          imagePullPolicy: Always
+
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: interver-app-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: app
+  ports:
+    - port: 80
+      targetPort: 8000
+      protocol: TCP
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: interver-app-ingress
+  namespace: default  # 여기서는 interver-app-service가 위치한 네임스페이스를 사용합니다.
+spec:
+  ingressClassName: ngrok
+  rules:
+    - host: mink-literate-grizzly.ngrok-free.app
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: interver-app-service
+                port:
+                  number: 80
+

@@ -1,0 +1,64 @@
+<main class="main">
+<!-- 모달 창 -->
+<div id="modalBackground" class="modal-background">
+    <div id="ai-question-modal" class="ai-question-modal">
+        <div class="ai-question-content">
+            <div class="ai-question-box">
+                <div class="ai-question-object">
+                    <!-- 추가적인 모달 내용 -->
+                    <img alt="" src="static/images/ai_speaking.jpg" class="ai_speaking">
+                    <!-- 사운드 박스 추가 -->
+                    <div class="boxContainer">
+                        <div class="box box1"></div>
+                        <div class="box box2"></div>
+                        <div class="box box3"></div>
+                        <div class="box box4"></div>
+                        <div class="box box5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+    
+    <!-- 로딩 모달 -->
+<div id="loadingModal" class="modal">
+    <div class="loading-container">
+        <div class="loading"></div>
+        <div id="loading-text">loading...</div>
+    </div>
+    <div class="loading-text-container">
+        <div id="loading-word-text">질문 생성 중...</div>
+    </div>
+</div>
+
+
+    <div id="user-answer-modal" class="user-answer-modal">
+        <div class="user-answer-content">
+            <!-- 마이크 애니메이션 요소 추가 -->
+            <div class="user_recording_box">
+                <div class="user_recording_object">
+                    <div class="user_recording_outline"></div>
+                    <div class="user_recording_outline" id="user_recording_delayed"></div>
+                    <div class="user_recording_button"></div>
+                    <div class="user_recording_button" id="user_recording_circlein">
+                        <!-- SVG 마이크 아이콘 -->
+                        <svg class="mic-icon" id="mic-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+                            <g><path d="M500,683.8c84.6,0,153.1-68.6,153.1-153.1V163.1C653.1,78.6,584.6,10,500,10c-84.6,0-153.1,68.6-153.1,153.1v367.5C346.9,615.2,415.4,683.8,500,683.8z M714.4,438.8v91.9C714.4,649,618.4,745,500,745c-118.4,0-214.4-96-214.4-214.4v-91.9h-61.3v91.9c0,141.9,107.2,258.7,245,273.9v124.2H346.9V990h306.3v-61.3H530.6V804.5c137.8-15.2,245-132.1,245-273.9v-91.9H714.4z"></path></g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <!-- 추가적인 모달 내용 -->
+            <div id="ai-question-textbox" class="ai-question-textbox">
+            </div>     
+            <div class="user-answer-textbox">
+                답변이 여기에 표시됩니다. 잠시 후 AI의 질문이 시작됩니다. 예시 :네, 저는 주로 딥러닝 기반의 알고리즘을 사용했습니다. 이러한 알고리즘은 큰 데이터 세트에서 복잡한 패턴을 인식하는 데 탁월하기 때문에 선택했습니다.
+            </div>         
+
+            <div class="chat-system-message">
+            </div>
+    </div>
+</div>
+
+<audio id="aiQuestionAudio" src="static/sounds/sample_question.mp3"></audio>
+</main>

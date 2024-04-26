@@ -1,0 +1,106 @@
+<main class="main" id="sign-up-main">
+        <!-- 로딩 모달 -->
+<div id="loadingModal" class="modal">
+    <div class="loading-container">
+        <div class="loading"></div>
+        <div id="loading-text">loading...</div>
+    </div>
+    <div class="loading-text-container">
+        <div id="loading-word-text">면접 준비 중...</div>
+        <div id="loading-word-text2">조용한 곳으로...</div>
+    </div>
+</div>
+
+    <div class="sign-up-content">
+        <h1 class="sign-up-logo">면접 사전준비</h1>
+        <form id="signupForm"> <!-- 폼 태그 추가 -->
+            <div class="sign-up-container">
+                <label class="sign-up-big-label">면접자 정보</label>
+                <label class="sign-up-small-label">이름</label>
+                <div class="sign-up-input-group">
+                    <input name="name" class="sign-up-input-normal" type="text" required readonly>
+                </div>
+
+                <label class="sign-up-small-label">관심분야</label>
+                <div class="sign-up-input-group">
+                    <input name="interest" class="sign-up-input-normal" type="text" required readonly>
+                    <button class="sign-up-confirm-button" type="button">수정하기</button>
+                </div>
+
+                <label class="sign-up-small-label">스킬</label>
+                <div class="sign-up-input-group">
+                    <div class="skill-list-container">
+                        <div id="skillList" class="show-skill-list"></div>
+                        <button class="sign-up-confirm-button" type="button">수정하기</button>
+                    </div>
+                </div>
+
+                <hr class="sign-up-hr">
+
+                <label class="sign-up-big-label">회사 정보</label>
+                <label class="sign-up-small-label">회사명</label>
+                <div class="sign-up-input-group">
+                    <input id="company-name" class="sign-up-input-normal" type="text">
+                </div>
+
+                <div class="sign-up-triple-divide-container">
+                    <div class="sign-up-input-group full-width">
+                        <label class="sign-up-small-label">업무</label>
+                        <textarea id="work" class="sign-up-input-normal"> </textarea>
+                    </div>
+                    <div class="sign-up-input-group full-width">
+                        <label class="sign-up-small-label">우대사항</label>
+                        <textarea id="preferred-qualifications" class="sign-up-input-normal"> </textarea>
+                    </div>
+                    <div class="sign-up-input-group full-width">
+                        <label class="sign-up-small-label">인재상</label>
+                        <textarea id="candidate_ideal" class="sign-up-input-normal"> </textarea>
+                    </div>
+                </div>
+
+                <hr class="sign-up-hr">
+
+                <div id="cover-letter-wrapper">
+                    <label class="sign-up-big-label">자기소개서</label>
+                    <div class="cover-letter-container">
+                        <textarea class="cover-letter"></textarea>
+                    </div>
+                    <!-- addButton을 cover-letter-wrapper 안쪽으로 이동 -->
+                    <div class="add-button">+</div>
+                </div>
+
+                <hr class="sign-up-hr">
+
+                <label class="sign-up-big-label">기능 강화</label>
+                <label class="sign-up-small-label">cs강화 - 더 어려워진 cs질문이 등장합니다</label>
+                <div class="sign-up-input-group">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="difficultyToggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <label id="toggleStatus">Off</label> <!-- 상태 표시 -->
+                </div>
+
+                <hr class="sign-up-hr">
+
+                <!-- 기능 강화 섹션 아래에 질문 개수 설정 옵션 추가 -->
+                <label class="sign-up-big-label">질문 개수 설정</label>
+                <label class="sign-up-small-label">질문 개수를 선택하세요 (5~10개)</label>
+                <div class="sign-up-input-group">    
+                    <select id="question-count" class="sign-up-input-normal">
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+
+                <button class="sign-up-btn" type="button" id="start-interview-btn">면접시작</button>
+            </div>
+
+        </form>
+    </div>
+</main>
+

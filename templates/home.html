@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>LLM기반 모의 면접 프로젝트</title>
+    <link href="{{ domain }}/static/css/main.css" rel="stylesheet">
+    <link href="{{ domain }}/static/css/pagination.css" rel="stylesheet">
+    <link href="{{ domain }}/static/css/loading.css" rel="stylesheet">
+
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <span class="logo-name">Interver</span>
+        <!-- 로그인 전 UI -->
+        <div class="auth-links">
+            <a href="#" id="go-sign-in">로그인</a>
+            <a href="#" id="go-sign-up">회원가입</a>
+        </div>
+        <!-- 로그인 후 UI -->
+        <div class="user-info">
+            <div class="header-links">
+                <a href="#" id="go-service">면접 서비스</a>
+                <a href="#" id="go-help">Help</a>
+            </div>
+            <div class="dropdown">
+                <span id="user-name">{{ userid }}님</span>
+                <div class="dropdown-content">
+                    <a href="#" id="go-my-page">MyPage</a>
+                    <a href="#" id="logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+<!--<aside class="sidebar-left"></aside>-->
+
+<div class="container">
+    <main class="main">
+        <div class="content">
+            <div class="text-container">
+                <label class="start-index">당당한 면접
+                    <br>
+                    인터버
+                </label>
+                <button class="start-btn" type="button">시작하기</button>
+            </div>
+            <img alt="" src="static/images/interview-home.jpg" class="interview-img">
+        </div>
+    </main>
+</div>
+
+<!--<aside class="sidebar-right"></aside>-->
+
+<!-- 로그인 모달 창 (수정된 부분) -->
+<div id="login-modal" class="modal">
+    <div class="modal-content">
+        <div class="login-container">
+            <form class="login-form" id="login-form">
+                <h2 class="login-logo">인터버</h2>
+                <div class="input-container">
+                    <input type="text" id="user-id" placeholder="아이디" name="user-id" required>
+                    <input type="password" id="user-password" placeholder="비밀번호" name="user-password" required>
+                </div>
+                <div id="login-error-message" style="display: none; color: red; font-size: 12px;"></div>
+                <button type="submit" class="login-button" id="loginFormButton">로그인</button>
+                <hr>
+                <!-- 계정 찾기와 회원가입 링크를 담은 컨테이너 -->
+                <div class="links-container">
+                    <label><a href="#" class="login-form-etc" id="move-find-id">계정 찾기</a> | <a href="#"
+                                                                                               class="login-form-etc"
+                                                                                               id="move-find-password">비밀번호
+                        변경</a></label>
+                    <label><a href="#" class="login-form-etc" id="move-sign-up">회원가입</a></label>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/static/js/script.js"></script>
+<script src="/static/js/move.js"></script>
+<script src="/static/js/add-cover-letter.js"></script>
+<script src="/static/js/board.js"></script>
+<script src="/static/js/feedback.js"></script>
+
+</body>
+</html>
